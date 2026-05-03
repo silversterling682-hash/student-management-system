@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System 🎓</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- HEADER -->
+        <header class="app-header">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <h1>Student Management System</h1>
+            </div>
+            <p>Manage, Track & Organize Student Records Efficiently</p>
+        </header>
+
+        <!-- STATISTICS DASHBOARD -->
+        <section class="stats-container">
+            <div class="stat-card">
+                <i class="fas fa-users"></i>
+                <div>
+                    <h3 id="totalStudents">0</h3>
+                    <p>Total Students</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-male"></i>
+                <div>
+                    <h3 id="maleCount">0</h3>
+                    <p>Boys</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-female"></i>
+                <div>
+                    <h3 id="femaleCount">0</h3>
+                    <p>Girls</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-book-open"></i>
+                <div>
+                    <h3 id="classesCount">0</h3>
+                    <p>Classes</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACTION BUTTONS -->
+        <section class="actions">
+            <button class="action-btn primary-btn" onclick="openAddStudentForm()">
+                <i class="fas fa-user-plus"></i> Add New Student
+            </button>
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Search by Name or Admission No...">
+            </div>
+        </section>
+
+        <!-- STUDENTS TABLE -->
+        <section class="table-container">
+            <table id="studentsTable">
+                <thead>
+                    <tr>
+                        <th>Admission No.</th>
+                        <th>Full Name</th>
+                        <th>Class</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                        <th>Contact</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="studentsTableBody">
+                    <tr>
+                        <td colspan="7" class="empty-state">
+                            <i class="fas fa-user-graduate fa-3x"></i>
+                            <p>No students added yet. Click "Add New Student" to start!</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <!-- ==========================================
+         MODAL FORM (POP-UP) TO ADD / EDIT STUDENT
+         ========================================== -->
+    <div id="studentModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle"><i class="fas fa-user-plus"></i> Add New Student</h2>
+            
+            <form id="studentForm">
+                <input type="hidden" id="studentId">
+                
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" required placeholder="e.g. John Kamau">
+                </div>
+
+                <div class="form-group">
+                    <label for="admissionNo">Admission Number</label>
+                    <input type="text" id="admissionNo" required placeholder="e.g. ADM-2026-001">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="studentClass">Class / Grade</label>
+                        <select id="studentClass" required>
+                            <option value="">Select Class</option>
+                            <option value="Form 1">Form 1</option>
+                            <option value="Form 2">Form 2</option>
+                            <option value="Form 3">Form 3</option>
+                            <option value="Form 4">Form 4</option>
+                            <option value="Grade 1">Grade 1</option>
+                            <option value="Grade 2">Grade 2</option>
+                            <option value="Grade 3">Grade 3</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input type="number" id="age" min="5" max="25" required placeholder="e.g. 15">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Gender</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="gender" value="Male" required> Male</label>
+                            <label><input type="radio" name="gender" value="Female" required> Female</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact">Parent / Guardian Contact</label>
+                        <input type="tel" id="contact" required placeholder="e.g. 0712345678">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Address / Location</label>
+                    <input type="text" id="address" placeholder="e.g. Nairobi, Kenya">
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-save"></i> Save Student Record
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT FILE -->
+    <script src="script.js"></script>
+</body>
+</html>
