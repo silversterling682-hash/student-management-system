@@ -163,9 +163,8 @@ def delete_student(student_id):
 if __name__ == '__main__':
     print("=" * 60)
     print("🎓 STUDENT MANAGEMENT SYSTEM SERVER RUNNING!")
-    print(f"🌐 Server Address: http://localhost:5000")
     print(f"📂 Database File: {DATABASE_FILE}")
     print("=" * 60)
     
-    # ⚠️ TURN OFF DEBUG MODE FOR PRODUCTION
-    app.run(debug=False, port=5000, host='0.0.0.0')
+    # Only runs when you start manually (locally)
+    app.run(debug=False, host='0.0.0.0', port=5000)
