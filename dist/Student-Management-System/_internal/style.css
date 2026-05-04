@@ -1,45 +1,4 @@
 /* ==========================================
-   🎨 HEADER & LOGO STYLES
-========================================== */
-.site-header {
-  width: 100%;
-  padding: 15px 30px;
-  background: #ffffff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  margin-bottom: 20px;
-}
-
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.site-logo {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%; /* Makes it perfectly round */
-  object-fit: cover;
-}
-
-.logo-text h2 {
-  font-family: Arial, sans-serif;
-  font-size: 18px;
-  color: #4B0082; /* Purple color matching logo */
-  margin: 0;
-  font-weight: bold;
-}
-
-.logo-text p {
-  font-family: Arial, sans-serif;
-  font-size: 10px;
-  color: #666666;
-  margin: 2px 0 0 0;
-  letter-spacing: 0.5px;
-}
-
-
-/* ==========================================
    GENERAL STYLES
 ========================================== */
 * {

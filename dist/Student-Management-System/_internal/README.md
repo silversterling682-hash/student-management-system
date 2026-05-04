@@ -52,15 +52,3 @@ This project demonstrates my skills in:
 ---
 
 ## 📂 Project Structure
-
-
-Student-Management-System/
-├── 📁 app/
-│    ├── index.html
-│    ├── style.css
-│    ├── script.js
-│    └── students_database.json
-├── 📄 app.py           # Python Backend
-├── 📄 main.py          # NEW FILE → This starts everything & opens the window
-├── 📄 README.md
-└── 📄 LICENSE
